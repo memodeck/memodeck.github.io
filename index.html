@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Kuznetsov Alexey Vasil`evich">
+    <title>Запомни Колоду</title>
+    
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+	
+	<!-- Styles for memodeck -->
+	<link href="deckofcards.css" rel="stylesheet">
+	<link href="checkbox.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvas_end" style="z-index: 10000;">
+      <div class="offcanvas-header">
+        <h1 class="offcanvas-title">Колода</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+
+        <div class="m-6">
+
+	  		<table class="table text-light bg-dark">
+			<!-- https://codepen.io/bbodine1/pen/DqdMRy -->
+			<!-- https://colorlib.com/wp/bootstrap-checkbox/ -->
+			<!-- https://mdbootstrap.com/docs/standard/ -->
+			<thead>
+				<tr>
+					<th scope="col" colspan="2" rowspan="2" class="bg-secondary align-middle">
+						<input type="checkbox" class="form-check-input" name="checkAll" id="checkAll" value="">
+					</th>
+					<th scope="col" class="bg-danger"><i class="bi bi-suit-spade-fill"></i></th>
+					<th scope="col" class="bg-danger"><i class="bi bi-suit-heart-fill"></i></th>
+					<th scope="col" class="bg-danger"><i class="bi bi-suit-club-fill"></i></th>
+					<th scope="col" class="bg-danger"><i class="bi bi-suit-diamond-fill"></i></th>
+				</tr>
+				<tr>
+					<th scope="col" class="bg-danger"><input class="form-check-input" type="checkbox" value="" id="checkSpade"></th>
+					<th scope="col" class="bg-danger"><input class="form-check-input" type="checkbox" value="" id="checkHeart"></th>
+					<th scope="col" class="bg-danger"><input class="form-check-input" type="checkbox" value="" id="checkClub"></th>
+					<th scope="col" class="bg-danger"><input class="form-check-input" type="checkbox" value="" id="checkDiamond"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row" class="bg-success">Т</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check1"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_1"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_14"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_27"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_40"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">2</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check2"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_2"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_15"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_28"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_41"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">3</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check3"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_3"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_16"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_29"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_42"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">4</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check4"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_4"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_17"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_30"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_43"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">5</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check5"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_5"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_18"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_31"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_44"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">6</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check6"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_6"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_19"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_32"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_45"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">7</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check7"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_7"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_20"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_33"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_46"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">8</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check8"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_8"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_21"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_34"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_47"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">9</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check9"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_9"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_22"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_35"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_48"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">10</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check10"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_10"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_23"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_36"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_49"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">В</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check11"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_11"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_24"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_37"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_50"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">Д</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check12"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_12"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_25"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_38"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_51"></td>
+				</tr>
+				<tr>
+					<th scope="row" class="bg-success">К</th>
+					<th scope="row" class="bg-success"><input class="form-check-input" type="checkbox" value="" id="check13"></th>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_13"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_26"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_39"></td>
+					<td><input class="form-check-input" type="checkbox" value="" id="check_card_52"></td>
+				</tr>
+			</tbody>
+		</table>
+
+        </div>        
+
+      </div>
+    </div>
+    
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      
+      <header class="mb-auto bg-dark rounded-3 shadow" style="z-index: 9999;">
+      <div>
+        <h3 class="float-md-start ms-3 me-3 p-1">Запомни Колоду</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end p-3">
+          <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Главная</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Описание</a>
+          <a class="nav-link fw-bold py-1 px-0" href="#">Контакты</a>
+        </nav>
+      </div>
+      </header>
+
+      <main id="main" class="px-3">
+        <div id="greetings" style="display: block;">
+          <h1>Запомнить колоду карт...</h1>
+          <p class="lead">Одним из самых простых примеров работы техник запоминания информации является запоминание колоды игральных карт. Освоив эту методику можно переходить к запоминанию более сложной информации.</p>
+          <p class="lead">
+          <a id="getStart" href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Приступить</a>
+          </p>
+        </div>
+        <div id="card" class="card bg-success overflow-hidden" style="display: none;">
+          <div class="card-body">
+            <div id='container' class="container" style="height: 18rem;">
+              <!--<div style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; margin: auto; width: 0px; height: 0px;">
+                <div style="cursor: move; z-index: 52; transform:scale(2,2);" class="playing-card spades rank1"><div class="face"></div></div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="mt-auto text-white-50">
+        <p>Шаблон Cover для <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a> от <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+      </footer>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom rounded shadow m-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Fixed bottom</a>
+
+        <button class="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_end">
+          <i class="bi bi-sliders"></i>
+        </button>
+      </div>
+    </nav>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>   
+
+	<script src="js/deck.js"></script>
+
+	<script type="text/javascript" src="memodeck.js"></script>
+  </body>
+</html>
